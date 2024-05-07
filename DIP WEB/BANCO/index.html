@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco DIP</title>
+  <link rel="shortcut icon" type="image/png" href="Imagens/LOGO DIP.ico">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+
+    <div class="logo">
+      <a href="index.html">
+      <img src="Imagens/LOGO DIP.png" alt="Logo Banco DIP">
+      Banco DIP
+      </a>
+    </div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Sobre</a></li>
+        <li><a href="index.html">Serviços</a></li>
+        <li><a href="index.html">Contato</a></li>
+        <li><a href="index.html">Ajuda</a></li>
+        <li><a href="../PÁGINA DE LOGIN/LOGIN/login.html">Login</a></li>
+      </ul>
+
+      <div class="menu-br">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+  <div class="container">
+    <div class="content">
+      <h1>Bem-vindo ao Banco DIP</h1>
+      <p>Gerencie sua vida financeira de forma simples e eficiente.</p>
+      <div class="transacao">
+        <label for="valorTransacao">Digite o Valor da Transação:</label>
+        <input type="number" id="valorTransacao" placeholder="Digite o valor...">
+        <div class="botoes-transacao">
+          <button id="botaoDeposito">Depósito</button>
+          <button id="botaoSaque">Saque</button>
+          <button id="botaoTransferencia">Transferência</button>
+        </div>
+      </div>
+      <div class="saldo">
+        <h2>Seu Saldo: <span id="saldo">R$</span></h2>
+      </div>
+      <div class="limiteChequeEspecial">
+        <h3>Limite de Cheque Especial</h3>
+        <p>Máximo: <span id="limiteChequeEspecial">R$</span></p>
+      </div>
+      <div id="resultado"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+    <img src="Imagens/LOGO DIP.png" alt="Logo Banco DIP">
+    <p> 2024 Banco DIP</p>
+</footer>
+
+<script src="script.js"></script>
+<script src="script-header.js"></script>
+
+</body>
+</html>

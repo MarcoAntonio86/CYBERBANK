@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:background="#0E386A"
+    android:orientation="vertical"
+    tools:context=".view.MainActivity">
+
+
+    <TextView
+        android:id="@+id/saldo_conta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="165dp"
+        android:fontFamily="@font/roboto_medium"
+
+        android:text="@string/txt_saldo_conta_main"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/txt_saldo_disponivel_plc"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_saldo_disponivel_plc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="42dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/txt_conta"
+
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/saldo_conta"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/cheque_especial_conta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/roboto_medium"
+
+        android:text="@string/txt_saldo_conta_main"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/txt_cheque_disponivel"
+        app:layout_constraintTop_toBottomOf="@+id/saldo_conta" />
+
+    <TextView
+        android:id="@+id/txt_cheque_disponivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/txt_cheque_especial"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+
+        app:layout_constraintBaseline_toBaselineOf="@+id/cheque_especial_conta"
+        app:layout_constraintStart_toStartOf="@+id/txt_saldo_disponivel_plc" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_depositar"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+
+
+        android:layout_marginStart="25dp"
+
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="264dp"
+
+        android:backgroundTint="#F4FEFE"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/txt_depositar"
+        android:textColor="#001E3F"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_Sacar"
+        android:layout_width="367dp"
+        android:layout_height="50dp"
+
+
+        android:layout_marginStart="23dp"
+
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="23dp"
+
+        android:layout_marginBottom="35dp"
+        android:backgroundTint="#F4FEFE"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/txt_sacar"
+        android:textColor="#001E3F"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Transferir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_depositar" />
+
+    <EditText
+        android:id="@+id/hint_user_valor"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+
+        android:layout_marginStart="15dp"
+
+
+
+        android:layout_marginEnd="15dp"
+        android:autofillHints="null"
+
+
+        android:backgroundTint="#F4FEFE"
+        android:hint="@string/hint_txt_inserir_valor"
+        android:inputType="number|numberDecimal"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="#F4FEFE"
+        app:layout_constraintBottom_toTopOf="@+id/btn_depositar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_cheque_disponivel" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_Transferir"
+        android:layout_width="371dp"
+        android:layout_height="49dp"
+
+
+        android:layout_marginStart="20dp"
+
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="20dp"
+
+        android:layout_marginBottom="111dp"
+        android:backgroundTint="#F4FEFE"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/txt_transferir"
+        android:textColor="#001E3F"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_depositar" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="170dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_saldo_disponivel_plc"
+        app:layout_constraintEnd_toEndOf="@+id/txt_saldo_disponivel_plc"
+        app:layout_constraintStart_toEndOf="@+id/txt_saldo_disponivel_plc"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

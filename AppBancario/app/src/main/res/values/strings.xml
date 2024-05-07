@@ -1,0 +1,12 @@
+<resources>
+        <string name="app_name">NomeDoApp</string>
+        <string name="txt_name_placeholder">Nome do Usuário</string>
+        <string name="txt_saldo_conta_main">Saldo da Conta:</string>
+        <string name="txt_conta">Conta Disponível:</string>
+        <string name="txt_cheque_especial">Cheque Especial Disponível:</string>
+        <string name="txt_depositar">Depositar</string>
+        <string name="txt_sacar">Sacar</string>
+        <string name="hint_txt_inserir_valor">Insira o valor</string>
+        <string name="txt_transferir">Transferir</string>
+
+</resources>

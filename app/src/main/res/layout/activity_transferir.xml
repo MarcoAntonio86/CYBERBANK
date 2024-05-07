@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#0E386A"
+    tools:context=".view.TransferirActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="118dp"
+        android:layout_height="137dp"
+        app:srcCompat="@drawable/logo"
+        android:layout_marginBottom="100dp"/>
+
+    <EditText
+        android:id="@+id/trans_user_email"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+
+
+
+        android:layout_marginBottom="20dp"
+
+        android:hint="@string/hint_email"
+        android:textColorHint="#F4FEFE"
+        android:textColor="#F4FEFE"
+        android:fontFamily="@font/roboto_medium"
+        android:padding="10dp"
+        android:inputType="textEmailAddress"
+
+        />
+
+    <EditText
+        android:id="@+id/trans_user_valor"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+
+
+
+        android:layout_marginBottom="20dp"
+
+        android:hint="@string/hint_txt_inserir_valor"
+        android:textColorHint="#F4FEFE"
+        android:textColor="#F4FEFE"
+        android:fontFamily="@font/roboto_medium"
+        android:padding="10dp"
+        android:inputType="number|numberDecimal"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_Transferir_user"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+
+        android:backgroundTint="#F4FEFE"
+        android:textColor="#476d99"
+
+        android:layout_marginBottom="20dp"
+
+        android:text="@string/txt_transferir"
+        android:fontFamily="@font/roboto_medium"
+
+
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_voltar"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+
+        android:backgroundTint="#F4FEFE"
+        android:textColor="#476d99"
+
+        android:text="@string/btn_txt_voltar"
+        android:fontFamily="@font/roboto_medium"
+
+
+        />
+
+
+
+
+</LinearLayout>

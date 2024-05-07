@@ -1,0 +1,337 @@
+/* Reset CSS */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #192042;
+  color: #192042;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.header {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #192042;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #192042;
+}
+
+.logo img {
+  width: 90px;
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+.nav-links li a {
+  color: #192042;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #324169;
+}
+
+.menu-br{
+  cursor: pointer;
+  display: none;
+}
+
+.menu-br .bar{
+  display: block;
+  width: 28px;
+  height: 3px;
+  border-radius: 3px;
+  background: #192042;
+  margin: 5px auto;
+  transition: all 0.3s;
+}
+
+.menu-br .bar:nth-child(1),
+.menu-br .bar:nth-child(3){
+  background: #192042;
+}
+
+/* Main */
+.main {
+  background-color: #192042;
+  padding: 50px 20px;
+  flex: 1;
+}
+
+.content {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.content h1 {
+  font-size: 2.5rem;
+  color: #192042;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.transacao {
+  margin-bottom: 30px;
+}
+
+.transacao label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.transacao input {
+  padding: 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.botoes-transacao {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.botoes-transacao button {
+  padding: 15px 40px;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #192042;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.botoes-transacao button:hover {
+  background-color: #324169;
+}
+
+.saldo,
+.limiteChequeEspecial {
+  margin-top: 20px;
+}
+
+.limiteChequeEspecial {
+  color: #192042;
+}
+
+/* Footer */
+footer {
+  background-color: #324169;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer img {
+    width: 100px;
+}
+
+
+
+/* Estilos do prompt */
+.prompt-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulario-transferencia {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  width: 100%;
+}
+
+.formulario-transferencia p {
+  margin-bottom: 20px;
+}
+
+.formulario-transferencia label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.formulario-transferencia input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.formulario-transferencia button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #192042;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.formulario-transferencia button:hover {
+  background-color: #0b1424;
+}
+
+/* Estilos para a pergunta sobre o uso do cheque especial */
+.pergunta-cheque-especial {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+
+  body {
+    background-color: #fff;
+  }
+
+  .main {
+    background-color: #fff;
+  }
+
+  nav ul li a{
+    color: #192042; 
+    align-items: center;
+    justify-content: center;
+  }
+
+  nav ul li {
+      height: 12vh;
+  }
+
+  .nav-links li {
+    margin-right: 0px;
+  }
+  
+
+  nav ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+  }
+
+  .menu-br{
+      display: block;
+  }
+
+  .menu-br.ativo .bar:nth-child(1){
+      transform:  translateY(8px) rotate(45deg);
+  }
+
+  .menu-br.ativo .bar:nth-child(2) {
+      opacity: 0;
+  }
+
+  .menu-br.ativo .bar:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-links{
+      position: fixed;
+      top: 65px;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      background: #fff;
+      transition: 0.3s;
+  }
+
+  .nav-links.ativo{
+      right: 0;
+  }
+
+  .content {
+    box-shadow: none;
+  }
+
+  .botoes-transacao {
+    flex-direction: column;
+  }
+
+  .botoes-transacao button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  footer {
+    display: none;
+  }
+}
