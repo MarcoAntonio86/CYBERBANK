@@ -82,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     if(novoSaldo >= 0 && cheque < CHEQUEESPECIAL){
                         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                        builder.setTitle("CYBER BANK");
-                        builder.setMessage("CHEQUE ESPECIAL PAGO");
+
+                        builder.setMessage("CHEQUE ESPECIAL COMPENSADO");
                         builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -140,8 +140,8 @@ public class MainActivity extends AppCompatActivity {
                     } else if (saldo < 0 && saldo > -CHEQUEESPECIAL) {
                         // Exibe um alerta informando que o cheque especial foi ultrapassado
                         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                        builder.setTitle("CYBER BANK");
-                        builder.setMessage("Sem cheque especial");
+
+                        builder.setMessage("LIMITE CHEQUE ESPECIAL ATINGIDO");
                         builder.setPositiveButton("Ok", null);
                         AlertDialog alerta = builder.create();
                         alerta.show();
@@ -154,8 +154,8 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         // Exibe um alerta informando saldo insuficiente
                         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                        builder.setTitle("CYBER BANK");
-                        builder.setMessage("Saldo insuficiente");
+
+                        builder.setMessage("SEM SALDO");
                         builder.setPositiveButton("Ok", null);
                         AlertDialog alerta = builder.create();
                         alerta.show();

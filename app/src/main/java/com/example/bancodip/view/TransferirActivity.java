@@ -56,7 +56,7 @@ public class TransferirActivity extends AppCompatActivity {
                     binding.transUserEmail.setText("");
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setTitle("CYBER BANK");
+
                     builder.setMessage("O CYBER BANK Agradece sua preferência");
                     builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
@@ -71,7 +71,7 @@ public class TransferirActivity extends AppCompatActivity {
                 }
             }else {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("CYBER BANK");
+
                 builder.setMessage("Saldo insuficiente ou email invalido");
                 builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
