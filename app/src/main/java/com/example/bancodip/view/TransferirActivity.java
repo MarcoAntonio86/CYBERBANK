@@ -32,6 +32,7 @@ public class TransferirActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String emailUser = intent.getStringExtra("email_trans");
         Double saldoUser = controllerBancoDados.getSaldoByTitular(emailUser);
+        Double chequeUser = controllerBancoDados.getChequeByTitular(emailUser);
 
         binding.btnTransferirUser.setOnClickListener(v -> {
 
@@ -39,7 +40,7 @@ public class TransferirActivity extends AppCompatActivity {
             Double destinatarioSaldo = controllerBancoDados.getSaldoByTitular(destinatarioEmail);
             String valorUser = binding.transUserValor.getText().toString();
 
-            if(controllerBancoDados.isEmailInDatabase(destinatarioEmail) && saldoUser > 0){
+            if(controllerBancoDados.isEmailInDatabase(destinatarioEmail) && saldoUser > 0 ){
                 try {
 
                     Double saldoUserNew = saldoUser - Double.parseDouble(valorUser);
@@ -69,7 +70,7 @@ public class TransferirActivity extends AppCompatActivity {
                     alerta.show();
 
                 }
-            }else {
+            } else {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
                 builder.setMessage("Saldo insuficiente ou email invalido");
