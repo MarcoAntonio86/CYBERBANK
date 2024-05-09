@@ -40,7 +40,7 @@ public class TransferirActivity extends AppCompatActivity {
             Double destinatarioSaldo = controllerBancoDados.getSaldoByTitular(destinatarioEmail);
             String valorUser = binding.transUserValor.getText().toString();
 
-            if(controllerBancoDados.isEmailInDatabase(destinatarioEmail) && saldoUser > 0 ){
+            if(controllerBancoDados.isEmailInDatabase(destinatarioEmail) && saldoUser > 0){
                 try {
 
                     Double saldoUserNew = saldoUser - Double.parseDouble(valorUser);
@@ -58,7 +58,7 @@ public class TransferirActivity extends AppCompatActivity {
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-                    builder.setMessage("O CYBER BANK Agradece sua preferência");
+                    builder.setMessage("TRANSFERENCIA EFETUADA COM SUCESSO");
                     builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -70,10 +70,40 @@ public class TransferirActivity extends AppCompatActivity {
                     alerta.show();
 
                 }
+            }else if(controllerBancoDados.isEmailInDatabase(destinatarioEmail) && saldoUser <= 0 && chequeUser > 0){
+                try{
+                    Double saldoUserNew = saldoUser - Double.parseDouble(valorUser);
+                    Double chequeUserNew = chequeUser - Double.parseDouble(valorUser);
+                    Double saldoDestinatarioNew = destinatarioSaldo + Double.parseDouble(valorUser);
+
+                    controllerBancoDados.updateSaldo(destinatarioEmail, saldoDestinatarioNew);
+                    controllerBancoDados.updateCheque(emailUser, chequeUserNew);
+                    controllerBancoDados.updateSaldo(emailUser, saldoUserNew);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }finally {
+                    controllerBancoDados.close();
+                    binding.transUserValor.setText("");
+                    binding.transUserEmail.setText("");
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+                    builder.setMessage("TRANSFERENCIA EFETUADA COM SUCESSO");
+                    builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Nada aqui
+                        }
+                    });
+
+                    AlertDialog alerta = builder.create();
+                    alerta.show();
+                }
+
             } else {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-                builder.setMessage("Saldo insuficiente ou email invalido");
+                builder.setMessage("FALTA DE SALDO OU EMAIL NÃO CADASTRADO");
                 builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

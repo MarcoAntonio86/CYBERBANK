@@ -151,10 +151,9 @@ public class MainActivity extends AppCompatActivity {
                         alerta.show();
 
                         controllerBancoDados.updateSaldo(email, -CHEQUEESPECIAL);
-                        binding.saldoConta.setText(String.valueOf(-CHEQUEESPECIAL));
-
+                        binding.saldoConta.setText("R$ " + String.valueOf(-CHEQUEESPECIAL));
                         controllerBancoDados.updateCheque(email, 0);
-                        binding.chequeEspecialConta.setText(String.valueOf(0.00));
+                        binding.chequeEspecialConta.setText("R$ " + String.valueOf(0.00));
                     } else{
                         AlertDialog.Builder builder = new AlertDialog.Builder(this);
                         builder.setMessage("SALDO INSUFICIENTE !");
@@ -198,9 +197,10 @@ public class MainActivity extends AppCompatActivity {
 
         String email = intent.getStringExtra("email");
         Double saldo = controllerBancoDados.getSaldoByTitular(email);
+        Double cheque = controllerBancoDados.getChequeByTitular(email);
 
-        binding.saldoConta.setText(String.valueOf(saldo));
-
+        binding.saldoConta.setText("R$ " + String.valueOf(saldo));
+        binding.chequeEspecialConta.setText("R$ " + String.valueOf(cheque));
     }
 
 
