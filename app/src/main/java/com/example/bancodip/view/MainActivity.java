@@ -118,43 +118,27 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     Double saldo = controllerBancoDados.getSaldoByTitular(email);
                     Double cheque = controllerBancoDados.getChequeByTitular(email);
-                    Double CHEQUEESPECIAL = controllerBancoDados.getChequeDEFIByTitular(email);
+                    Double CHEQUE_ESPECIAL = controllerBancoDados.getChequeDEFIByTitular(email);
 
                     Double valorSaque = Double.parseDouble(valorCliente);
-
                     Double novoSaldo = saldo - valorSaque;
-                    Double novoCheque = cheque - valorSaque;
 
-                    Double novoSaldoMais = saldo + valorSaque;
-
-                    if (saldo > 0 && novoSaldo >= 0) {
+                    // Verifica se há saldo suficiente ou se é necessário utilizar o cheque especial
+                    if (novoSaldo >= 0) {
                         // Atualiza o saldo no banco de dados e na interface do usuário
                         controllerBancoDados.updateSaldo(email, novoSaldo);
                         binding.saldoConta.setText(String.valueOf(novoSaldo));
-                    } else if (saldo <= 0 && novoSaldo >= -CHEQUEESPECIAL) {
+                    } else if (cheque + novoSaldo >= 0) {
+                        // Calcula o saldo restante após utilizar o cheque especial
+                        Double saldoRestante = novoSaldo + cheque;
+
                         // Atualiza o saldo e o cheque especial no banco de dados e na interface do usuário
-                        controllerBancoDados.updateSaldo(email, novoSaldo);
-                        binding.saldoConta.setText(String.valueOf(novoSaldo));
-                        controllerBancoDados.updateCheque(email, novoCheque);
-                        binding.chequeEspecialConta.setText(String.valueOf(novoCheque));
-                    } else if (saldo <= -CHEQUEESPECIAL) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                        builder.setMessage("CHEQUE ESPECIAL expirado !");
-                        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                // Nada aqui
-                            }
-                        });
-
-                        AlertDialog alerta = builder.create();
-                        alerta.show();
-
-                        controllerBancoDados.updateSaldo(email, -CHEQUEESPECIAL);
-                        binding.saldoConta.setText("R$ " + String.valueOf(-CHEQUEESPECIAL));
-                        controllerBancoDados.updateCheque(email, 0);
-                        binding.chequeEspecialConta.setText("R$ " + String.valueOf(0.00));
-                    } else{
+                        controllerBancoDados.updateSaldo(email, 0.0);
+                        controllerBancoDados.updateCheque(email, saldoRestante);
+                        binding.saldoConta.setText("R$ 0.00");
+                        binding.chequeEspecialConta.setText("R$ " + String.valueOf(saldoRestante));
+                    } else {
+                        // Se não houver saldo suficiente nem cheque especial disponível, exibe mensagem de saldo insuficiente
                         AlertDialog.Builder builder = new AlertDialog.Builder(this);
                         builder.setMessage("SALDO INSUFICIENTE !");
                         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -167,8 +151,6 @@ public class MainActivity extends AppCompatActivity {
                         AlertDialog alerta = builder.create();
                         alerta.show();
                     }
-
-
 
                 } catch (Exception e) {
                     e.printStackTrace();
