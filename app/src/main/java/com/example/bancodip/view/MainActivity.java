@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     binding.saldoConta.setText(String.valueOf(novoSaldo));
 
 
-                    if(valorSaldo < 0 ){
+                    if(novoSaldo < 0 ){
                         controllerBancoDados.updateCheque(email, novoCheque);
                         binding.chequeEspecialConta.setText(String.valueOf(novoCheque));
                     }

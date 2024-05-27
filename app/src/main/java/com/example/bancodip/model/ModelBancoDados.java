@@ -8,13 +8,13 @@ import androidx.annotation.Nullable;
 
 public class ModelBancoDados extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "CyberBank";
+    private static final String DATABASE_NAME = "banco_tds0025";
     private static final int DATABASE_VERSION = 1;
 
-    public static final String NOME_TABELA = "CyberBank";
+    public static final String NOME_TABELA = "usuarios";
     public static final String COLUNA_ID = "id";
-    public static final String COLUNA_TITULAR = "titular";
-    public static final String COLUNA_EMAIL = "email";
+    public static final String COLUNA_TITULAR = "nome";
+    public static final String COLUNA_EMAIL = "cpf";
     public static final String COLUNA_SALDO= "saldo";
     public static final String COLUNA_CHEQUE_ESPECIAL = "cheque_especial";
     public static final String COLUNA_CHEQUE_ESPECIAL_DEFI = "cheque_especial_defi";
